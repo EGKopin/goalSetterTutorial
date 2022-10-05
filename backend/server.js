@@ -3,7 +3,7 @@ const colors = require('colors') //requiring in main server.js file allows use i
 const dotenv = require ('dotenv').config()
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
-const port = process.env.port || '5000-egkopin-goalsettertutor-k88braa4b5o.ws-us67.gitpod.io'
+const port = process.env.port || 5000
 
 // connectDB() 
 
