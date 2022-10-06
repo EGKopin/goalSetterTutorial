@@ -3,7 +3,10 @@ const router = express.Router()
 const { getGoals, setGoal, updateGoal, deleteGoal } = require('../controllers/goalController')
 const { protect } = require('../middleware/authMiddleware')  //now all have access to the req.user.id through adding the middleware for use in their next middleware
 
-router.get('/', protect, getGoals)
+// router.get('/', protect, getGoals)
+router.get('/', (req,res) => {
+  res.json('test')
+})
 
 router.post('/', protect, setGoal)
 
