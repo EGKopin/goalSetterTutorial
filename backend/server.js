@@ -3,17 +3,20 @@ const colors = require('colors') //requiring in main server.js file allows use i
 const dotenv = require ('dotenv').config()
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
+const goalRoutes = require('./routes/goalRoutes')
 const port = process.env.port || 5000
 
-connectDB() 
+// connectDB() 
 
 const app = express();
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
-
-app.get('/api/goals', require('./routes/goalRoutes'))
-app.get('/api/users', require('./routes/userRoutes'))
+app.get('/', (req,res) => {
+  res.send('empty page')
+})
+app.use('/api/goals', goalRoutes)
+app.use('/api/users', require('./routes/userRoutes'))
 
 app.use(errorHandler) //overwrites default and uses the one in we wrote
 
