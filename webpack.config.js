@@ -6,7 +6,7 @@ module.exports = {
     entry:'./client-frontend/index.js',
     output: {
         publicPath: '/',
-        filename: 'build.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'build'),
     },
     devServer: {
@@ -31,7 +31,7 @@ module.exports = {
             }
         }
     },
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -53,7 +53,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title:'GoalSetter',
+            // title:'GoalSetter',
             template: './client-frontend/index.html'
         })
     ],

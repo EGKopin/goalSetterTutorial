@@ -2,11 +2,12 @@
   "name": "goalsettertutorial",
   "version": "1.0.0",
   "description": "Following along a tutorial for practice",
-  "main": "index.js",
+  "main": "./client-frontend/index.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "build": "webpack-dev-server --mode development --open"
+    "build": "webpack-dev-server --mode development --open",
+    "dev": "concurrently \"webpack-dev-server --mode development --open\" \"nodemon server/server.js\""
   },
   "repository": {
     "type": "git",

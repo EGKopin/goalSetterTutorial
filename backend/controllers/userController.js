@@ -48,7 +48,7 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     //Check for user email in database
-    const user = await user.findOne({email})
+    const user = await User.findOne({email})
     //Check password is the same, new input first, and then saved hashed password
     if(user && (await bcrypt.compare(password, user.password))){
         res.json({
