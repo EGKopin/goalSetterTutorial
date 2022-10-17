@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './src/components/Header';
-import Dashboard from './src/pages/Dashboard';
-import Login from './src/pages/Login';
-import Register from './src/pages/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import Header from './src/components/Header.jsx';
+import Dashboard from './src/pages/Dashboard.jsx';
+import Login from './src/pages/Login.jsx';
+import Register from './src/pages/Register.jsx';
 
 function App () {
   return(
@@ -18,6 +20,7 @@ function App () {
       </Routes>
     </div>
     </Router>
+    <ToastContainer />
     </>
   )
 }
