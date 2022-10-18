@@ -67,12 +67,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route GET /api/users/me
 // @access Private, has access to req.user
 const getMe = asyncHandler(async(req, res) => {
-    const { _id, name, email } = await User.findById(req.user.id);
-    res.status(200).json({
-        id: _id,
-        name,
-        email
-    })
+    res.status(200).json(req.user)
 })
 
 //generate Token function (data we want a token created from, the secret to create the token)
